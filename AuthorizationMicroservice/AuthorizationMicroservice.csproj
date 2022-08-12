@@ -19,5 +19,11 @@
     <PackageReference Include="Moq" Version="4.13.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="DeploymentCloud.yml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 
 </Project>
