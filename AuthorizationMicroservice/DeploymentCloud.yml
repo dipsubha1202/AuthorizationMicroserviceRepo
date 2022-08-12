@@ -1,0 +1,54 @@
+﻿apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+	name: webapiauthservice-deployment 
+	labels:
+		app: MC1app 
+spec:
+	replicas: 1
+
+	selector:
+		matchLabels:
+
+		app: MC1app
+
+	template:
+	metadata:
+
+	labels:
+		app: MC1app
+		
+	spec:
+
+	containers:
+
+	- name: mc1app
+
+	image: pensioncr.azurecr.io/mc1appimage:latest
+
+	ports:
+	- containerPort: 8080
+	
+	imagePullSecrets:
+	- name: webapisvcsecret 
+
+---
+apiVersion: v1
+
+kind: Service
+
+metadata:
+	name: mv1appsvc
+spec:
+
+	type: LoadBalancer
+	 ports:
+		-port: 80
+
+selector:
+
+app: MC1app
+
+
