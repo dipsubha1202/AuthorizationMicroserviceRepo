@@ -26,7 +26,10 @@ namespace AuthorizationMicroservice
         {
             
             services.AddDbContext<MOnePensionDbContext>(options =>
-              options.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
+              //options.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
+              options.UseSqlServer(Configuration.GetConnectionString("Server = tcp:authpension.database.windows.net,1433; Initial Catalog = MSONEPensionDb; Persist Security Info = False; User ID = pension; Password = Subhadip@1202; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;")));
+
+            
             services.AddCors(options =>
             {
                 options.AddPolicy("EnableCORS", builder =>

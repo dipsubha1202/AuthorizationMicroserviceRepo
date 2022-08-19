@@ -1,22 +1,22 @@
 ﻿apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapiauthservice-deployment 
+  name: authmc-deployment 
   labels:
-    app: mc1app 
+    app: authmc 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mc1app
+      app: authmc
   template:
     metadata:
       labels:
-        app: mc1app
+        app: authmc
     spec:
       containers:
-      - name: mc1app
-        image: pensioncr.azurecr.io/mc1appimage:latest
+      - name: authmc
+        image: pensioncr.azurecr.io/authmcimage:latest
         ports:
         - containerPort: 8080
       imagePullSecrets:
@@ -25,10 +25,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mc1appsvc
+  name: authmcsvc
 spec:
   selector:
-    app: mc1app
+    app: authmc
   type: LoadBalancer
   ports:
   - port: 80
