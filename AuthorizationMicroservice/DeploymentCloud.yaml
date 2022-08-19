@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: webapiauthservice-deployment 
   labels:
-    app: MC1app 
+    app: mc1app 
 spec:
   replicas: 1
   selector:
@@ -27,10 +27,10 @@ kind: Service
 metadata:
   name: mc1appsvc
 spec:
+  selector:
+    app: mc1app
   type: LoadBalancer
   ports:
   - port: 80
-  selector:
-    app: mc1app
-
+  
 

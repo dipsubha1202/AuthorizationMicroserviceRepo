@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuthorizationMicroservice.Migrations
 {
     [DbContext(typeof(MOnePensionDbContext))]
-    [Migration("20220806175831_AzureInitial")]
-    partial class AzureInitial
+    [Migration("20220819102709_Initials")]
+    partial class Initials
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

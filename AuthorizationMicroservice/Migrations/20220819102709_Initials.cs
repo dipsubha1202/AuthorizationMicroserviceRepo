@@ -2,7 +2,7 @@
 
 namespace AuthorizationMicroservice.Migrations
 {
-    public partial class AzureInitial : Migration
+    public partial class Initials : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
