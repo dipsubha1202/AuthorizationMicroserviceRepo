@@ -27,10 +27,9 @@ kind: Service
 metadata:
   name: authmcsvc
 spec:
-  selector:
-    app: authmc
   type: LoadBalancer
   ports:
   - port: 80
+  selector:
+    app: authmc
   
-
